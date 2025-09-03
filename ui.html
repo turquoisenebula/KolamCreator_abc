@@ -235,7 +235,7 @@
                     </div>
                     <div class="uploaded-image" id="uploadedImage" style="display: none;">
                         <img id="previewImage" alt="Uploaded kolam">
-                        <button class="remove-btn" onclick="removeImage()">✕</button>
+                        <button class="remove-btn" onclick="removeImage(event)">✕</button>
                     </div>
                 </div>
             </div>
@@ -294,10 +294,6 @@
             uploadZone.classList.remove('dragover');
             const files = e.dataTransfer.files;
             if (files.length > 0) handleImageUpload(files[0]);
-        });
-
-        uploadZone.addEventListener('click', () => {
-            if (!currentFile) imageInput.click();
         });
 
         imageInput.addEventListener('change', (e) => {
